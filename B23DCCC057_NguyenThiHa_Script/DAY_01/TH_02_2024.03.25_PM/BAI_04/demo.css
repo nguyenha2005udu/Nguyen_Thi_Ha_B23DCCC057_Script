@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    background-color: rgb(222, 230, 245);
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    padding: 40px; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 900px;
+    
+}
+
+.danh_muc_1, .danh_muc_2 {
+    display: flex;
+    font-size: 20px;
+    align-items: center; 
+    gap: 30px;
+    
+}
+.danh_muc_1b img {
+    border: 0px solid #ccc;
+    border-radius: 12px;
+}
+.danh_muc_2b img {
+    border: 0px solid #ccc;
+    border-radius: 12px;
+}
+.danh_muc_2a{
+    font-weight: bold;
+}
+.danh_muc_item {
+    color: black;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.danh_muc_item:hover {
+    color: #095bcf;
+}
+.danh_muc_1a img, .danh_muc_2a img {
+    width: 30px; 
+    height: 30px; 
+}
