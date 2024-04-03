@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (sum >= 100) break;
+            sum += i;
+        }
+        document.write("Tổng các số nguyên dương từ 1 đến n là: " + sum);
+
+        var tong = 0;
+        var j = 1;
+        while (tong <= 100) {
+            if (tong >= 100) break;
+            tong += j;
+        }
+        document.write("<br> Tổng các số nguyên dương từ 1 đến n là: " + tong);
+
+        var total = 0;
+        var k = 1;
+        do {
+            total += k;
+            k++;
+            if (total >= 100) break;
+        } while (k <= 100);
+        document.write("<br> Tổng các số nguyên dương từ 1 đến n là: " + total);
+
+    </script>
+</body>
+
+</html>

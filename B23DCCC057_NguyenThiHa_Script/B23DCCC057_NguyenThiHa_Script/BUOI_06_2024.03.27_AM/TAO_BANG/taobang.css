@@ -1,0 +1,22 @@
+body h1 {
+    font-size: 30px;
+    color: red;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 60%;
+    text-align: center;
+}
+th {
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    color:blueviolet;
+}
+td {
+    font-size: 18px;
+    color:blueviolet;
+}
+

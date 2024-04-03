@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title" align ="center">Create Account</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First name *</span>
+                    <input type="text" placeholder="enter your first name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Last name</span>
+                    <input type="text" placeholder="enter your last name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email *</span>
+                    <input type="text" placeholder="enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password *</span>
+                    <input type="text" placeholder="enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password *</span>
+                    <input type="text" placeholder="enter your password again" required>
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+                <span class="gender-title">Gender:</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                </div>
+            </div>
+            <div class="hobbies-details">
+                <input type="checkbox" name="hobbies" id="hot-1">
+                <input type="checkbox" name="hobbies" id="hot-2">
+                <input type="checkbox" name="hobbies" id="hot-3">
+                <input type="checkbox" name="hobbies" id="hot-4">
+                <span class="hobbies-title">Hobbies:</span>
+                <div class="category">
+                    <label for="hot-1">
+                        <span class="hot one"></span>
+                        <span class="hobbies">Music</span>
+                    </label>
+                    <label for="hot-2">
+                        <span class="hot two"></span>
+                        <span class="hobbies">Sports</span>
+                    </label>
+                    <label for="hot-3">
+                        <span class="hot three"></span>
+                        <span class="hobbies">Travel</span>
+                    </label>
+                    <label for="hot-4">
+                        <span class="hot four"></span>
+                        <span class="hobbies">Movies</span>
+                    </label>
+                </div>
+            </div>
+            <div class="source_of_income-details">
+                <span class="source_of_income-title">Source of Income</span>
+                <select id="source_of_income" name="source_of_income">
+                    <option value="employed">Employed</option>
+                    <option value="self_employed">Self-employed</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+            </div>
+            <div class="upload-details">
+                <span class="upload-title">Upload Profile Picture</span>
+                <input type="file" id="file-upload" multiple required />
+            </div>
+
+            <div class="bio-details">
+                <span class="bio-title">Bio </span>
+                <textarea id="" name="details" rows="6" cols="70"></textarea>
+            </div>
+    
+            <div class="button">
+                <div class="button">
+                    <input type="submit" value="Create">
+                </div>
+            </div>
+        </form>
+    </div>   
+</body>
+</html>
