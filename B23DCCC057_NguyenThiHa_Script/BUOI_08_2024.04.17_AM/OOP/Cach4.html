@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            name;
+            age;
+            countryside;
+            hello(){
+                document.write("Hello "+ this.name);
+             }
+
+             changename(newname){
+                this.name = newname;
+             }
+
+        }
+
+        peop = new Person();
+        peop.name = "Nguyen Thi Ha";
+        peop.hello();
+        peop.countryside = "Nghe An";
+        document.write('<br>'+peop.name + ': ' + peop.countryside);
+        peop.changename("Nguyen Thi Huyen Trang");
+        document.write('<br>'+peop.name + ': ' + peop.countryside);
+
+    </script>
+</body>
+</html>
