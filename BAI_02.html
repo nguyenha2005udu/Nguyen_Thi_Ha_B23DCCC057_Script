@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .highlight {
+            color: red;
+        }  
+    </style>
+</head>
+<body>
+    <h1> Thêm nhiệm vụ </h1>
+    <div id="fill">
+        <input type="text" id="input-text">
+        <button id="addtext">Thêm nhiệm vụ</button>
+    </div>
+    <ul id="list-nhiệm-vụ"></ul>
+    
+    <script>
+        $(document).ready(function(){
+            var nvu = []; 
+            
+            $('#addtext').click(function(){
+                var nhiem_vu = $("#input-text").val();
+                if(nhiem_vu) {
+                    var nhiem_vu_moi = {
+                        text: nhiem_vu,
+                        completed: false
+                    };
+                    nvu.push(nhiem_vu_moi);
+                    var lnvu = $("<li>" + nhiem_vu_moi.text + "</li>");
+
+                    lnvu.mouseover(function(){
+                        $(this).addClass('highlight');
+                    }).mouseout(function(){
+                        $(this).removeClass('highlight');
+                    });
+
+                    $("#list-nhiệm-vụ").append(lnvu);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
