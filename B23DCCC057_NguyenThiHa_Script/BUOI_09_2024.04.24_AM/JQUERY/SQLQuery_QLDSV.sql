@@ -1,0 +1,37 @@
+CREATE database Quan_Li_Diem_SV
+GO
+Use Quan_Li_Diem_SV
+GO
+CREATE TABLE Khoa (
+    MaKhoa VARCHAR(255) NOT NULL PRIMARY KEY,
+    TenKhoa VARCHAR(255),
+    DiaDiemVanPhong VARCHAR(255)
+);
+
+CREATE TABLE MonHoc (
+    MaMonHoc VARCHAR(255) NOT NULL PRIMARY KEY,
+    TenMonHoc VARCHAR(255),
+    SoTinChi INT
+);
+
+CREATE TABLE SinhVien (
+    MaSV VARCHAR(255) NOT NULL PRIMARY KEY,
+    TenSV VARCHAR(255)
+);
+
+CREATE TABLE LopTinChi (
+    MaLTC VARCHAR(255) NOT NULL PRIMARY KEY,
+    ThoiGianBatDau DATETIME,
+    ThoiGianKetThuc DATETIME,
+    MaMonHoc VARCHAR(255), -- Sửa từ INT thành VARCHAR(255)
+    FOREIGN KEY (MaMonHoc) REFERENCES MonHoc(MaMonHoc)
+);
+
+CREATE TABLE DiemThi (
+    MaSV VARCHAR(255),
+    MaLTC VARCHAR(255),
+    Diem FLOAT,
+    PRIMARY KEY (MaSV, MaLTC),
+    FOREIGN KEY (MaSV) REFERENCES SinhVien(MaSV),
+    FOREIGN KEY (MaLTC) REFERENCES LopTinChi(MaLTC)
+);
