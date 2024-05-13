@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <style>
+        #slider-container {
+            width: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        #slider {
+            width: 3000px;
+            transition: transform 0.5s ease;
+        }
+
+        #slider img {
+            float: left;
+            width: 600px;
+            height: auto;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        #prev {
+            left: 0;
+        }
+
+        #next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider-container">
+        <div id="slider">
+            <img src="a1.jpg" alt="Ảnh 1">
+            <img src="a2.jpg" alt="Ảnh 2">
+            <img src="a3.jpg" alt="Ảnh 3">
+            <img src="a4.jpg" alt="Ảnh 4">
+            <img src="a5.jpg" alt="Ảnh 5">
+        </div>
+        <div id="prev" class="slider-button">&lt; Back</div>
+        <div id="next" class="slider-button">Next &gt;</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var currentSlide = 0;
+            var totalSlides = $('#slider img').length;
+
+            // tự động trượt ảnh sau mỗi 5s
+            function autoSlide() {
+                setInterval(function() {
+                    nextSlide();
+                }, 5000);
+            }
+
+            autoSlide();
+
+            //hiển thị slide tiếp theo
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                $('#slider').css('transform', 'translateX(' + (-600 * currentSlide) + 'px)');
+            }
+
+            //hiển thị slide trước đó
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                $('#slider').css('transform', 'translateX(' + (-600 * currentSlide) + 'px)');
+            }
+
+            // Sự kiện click cho nút Next
+            $('#next').click(function() {
+                nextSlide();
+            });
+
+            // Sự kiện click cho nút Back
+            $('#prev').click(function() {
+                prevSlide();
+            });
+        });
+    </script>
+</body>
+</html>

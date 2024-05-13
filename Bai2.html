@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>List Item</h1>
+    <div id="fill">
+        <input type="text" id="input-item" placeholder="New item">
+        <button id="add-item">Add</button>
+    </div>
+    <ul id="list-item"></ul>
+    
+    <script>
+        $(document).ready(function(){
+            $('#add-item').click(function(){
+                var newItem = $("#input-item").val().trim();
+                
+                if (newItem !== '') { 
+                    $('#list-item').append('<li>' + newItem + '</li>');
+                    $('#input-item').val(''); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
