@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ES6</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <script type="text/babel">
+        var x = 10;
+        function myFnc(){
+          console.log(x); // output: 10, x có ảnh hưởng tới Function //
+        }
+        console.log(x); // output: 10, x có ảnh hưởng khắp nơi //
+        myFnc();
+        
+
+        const x = 10;
+        console.log(x);  // output: 10 //
+
+        /* Khai báo tham số mặc định*/
+        function sum(a=3, b) {
+            return a + b;
+        }
+        console.log(sum(4, 5)); 
+        console.log(sum(5));
+
+        /*Gán bên trong function */
+        function user(name) {
+            name = name || "Ha";
+            return name;
+
+        }
+        console.log(user());
+        console.log(user("Nguyen Thi Ha"));
+
+        //Spread syntax với arr
+        const oldArr = [1, 2, 3];
+        const newArr = [...oldArr, 4, 5];
+        console.log(newArr); //=> kết quả cuối cùng là một mảng từ 1-5
+        //Spread syntax với Object
+        const oldObj = {
+            name: 'Nguyen Thi Ha',
+            age: 19,
+            class: 'D23CQCC01'
+
+        };
+        const newObj = {
+            ...oldObj,
+            hobbies: 'listen to music'
+        };
+        console.log(newObj);
+
+        // Khai báo tham số còn lại
+        function age(age1, age2, ...ageOther){
+            console.log('age1',age1);
+            console.log('age2',age2);
+            console.log('Other age', ageOther);
+        }
+        age("18", "19", "20", "21", "22");
+
+        //destructuring
+        const arr = [1, 2, 3];
+        const [a, b] = arr;
+        console.log(a);
+        console.log(b);
+        
+        //obj
+        const myObj = {
+            name: 'Nguyen Thi Ha',
+            age: 18
+        }
+        const {name, age} = myObj;
+        console.log(myObj);
+
+        //Arrow function
+        var user = (name, age) => {
+            console.log(name, age);
+        }
+        user('Nguyen Thi Ha', 19);
+
+        // arrow k có tham số
+        var num = () => {
+            console.log(19);
+        }
+        num();
+        //class
+        class user {
+            constructor() {
+              this.name = "Nguyen Thi Ha";
+            }
+          }
+          var x = new user();
+          console.log(x.name);
+    </script>
+  </body>
+</html>
